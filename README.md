@@ -1,8 +1,8 @@
-## Datesters
+# Datesters
 
 ## Synopsis
 
-*Datesters* is an online dating application that allows users to determine the suitability of a dating partner based on their names and returns a **Percent Match**. The application will then suggest a series of popular date spots based on the user's location. Users will be able to save their partners and date spots for future reference.
+*Datesters* is an online date planner application that allows users to determine the suitability of a dating partner based on their names and returns a **Percent Match**. The application will then suggest a series of popular date spots based on the user's location. Users will be able to save their partners and date spots for future reference.
 
 ## Tech Used
 

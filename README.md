@@ -39,3 +39,33 @@ We created this project to simplify selecting places to go for date night. Wheth
 ## License
 
 * MIT
+
+## Project Board
+
+* [TRELLO](https://trello.com/b/HLxwK3sU/datesters)
+
+## Schema
+
+![Schema](readIMG/Schema301.png)
+
+## UML
+
+![UML](readIMG/UML301.png)
+
+## Wireframe
+
+Landing
+
+![landing](readIMG/home301.png)
+
+Home
+
+![home](readIMG/input301.png)
+
+Profile
+
+![profile](readIMG/profile301.png)
+
+About Us
+
+![about](readIMG/about301.png)

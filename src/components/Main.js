@@ -1,12 +1,12 @@
 import React from 'react';
-import {Image} from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 
 class Main extends React.Component {
   render() {
-    return(
+    return (
       <>
         <h1>Welcome</h1>
-        <Image src="https://via.placeholder.com/400x200"/>
+        <Image src="https://via.placeholder.com/400x200" />
         <section id='about-app'>
           <h3>About our App</h3>
           <p>

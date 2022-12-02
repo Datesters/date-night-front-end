@@ -8,7 +8,7 @@ class TeamMemberCard extends React.Component {
     return (
       <>
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://via.placeholder.com/150x75" />
+          <Card.Img variant="top" src={this.props.url} />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
             <Card.Text>{this.props.description}</Card.Text>

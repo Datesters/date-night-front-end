@@ -1,22 +1,28 @@
 [
   {
     "name": "Aubrey",
-    "description": "Is Aubrey"
+    "description": "Is Aubrey",
+    "imageurl": "./Profile-image/aubrey.png"
+    
   },
   {
     "name": "Ricardo",
-    "description": "Is Ricardo"
+    "description": "Is Ricardo",
+    "imageurl": "./Profile-image/Ricardo.png"
   },
   {
     "name": "Harper",
-    "description": "Is Harper"
+    "description": "Is Harper",
+    "imageurl": "./Profile-image/Harper.png"
   },
   {
     "name": "Angelos",
-    "description": "Is Angelos"
+    "description": "Is Angelos",
+    "imageurl": "./Profile-image/Angelos.png"
   },
   {
     "name": "Martin",
-    "description": "Is Martin"
+    "description": "Is Martin",
+    "imageurl": "./Profile-image/Martin.png"
   }
 ]

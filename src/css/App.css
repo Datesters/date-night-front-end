@@ -1,3 +1,8 @@
+body {
+  background-color: #400716;
+  color: #9CA6A2;
+}
+
 .App {
   text-align: center;
 }
@@ -24,6 +29,22 @@
   color: white;
 }
 
+#about-app {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#landing-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -41,9 +62,35 @@
   width: 200rem;
 }
 
+.card {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  max-width: 32%;
+  max-height: 600px;
+  margin: auto;
+  padding: auto;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.021);
+  text-align: center;
+
+}
+
 .card Img {
-width: 300px;
-height: 300px;
+  height: 200px;
+  width: 250px;
+  align-items: center;
+  padding: 2.35rem;
+}
+
+.card:hover {
+  box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.687);
+}
+
+h2 {
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  ;
 }
 
 /* Img {

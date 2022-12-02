@@ -17,10 +17,21 @@ class DateGen extends React.Component {
     };
   }
 
-  handleSubmit = async (event) => {
+  handleCitySubmit = async (e) => {
+    event.preventDefault();
+    let dateSpots = await axios.get(`${serverUrl}/location?location=${this.state.loc}`);
+    console.log(dateSpots);
+  }
+
+  handleLoveSubmit = async (event) => {
     event.preventDefault();
     let userCompatiblity = await axios.get(`${serverUrl}/calculator?nameOne=${this.state.nameOne}&nameTwo=${this.state.nameTwo}`);
     console.log(userCompatiblity);
+  };
+
+  handleSubmit = () => {
+    this.handleCitySubmit();
+    this.handleLoveSubmit();
   };
 
   handleInputChange = (event) => {

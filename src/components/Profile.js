@@ -1,6 +1,26 @@
 import React from 'react';
-import { Accordion } from 'react-bootstrap';
+import { Accordion, Card, Button} from 'react-bootstrap';
+import {useAccordionButton} from 'react-bootstrap/AccordionButton';
 // import '../css/Profile.css';
+
+function ContextAwareToggle({
+  children, eventKey, callback
+}) {
+  const { activeEventKey } = useContext(AccordionContext);
+  const decoratedOnClick = useAccordionButton(
+    eventKey,
+    () => callback && callback(eventKey),
+  );
+  const isCurrentEventKey = activeEventKey === eventKey;
+  return (
+    <button
+      type='button'
+      style={{ backgroundcolor: isCurrentEventKey ? 'pink' : 'lavender' }}
+      onClick={decoratedOnClick}>
+      {children}
+    </button>
+  );
+}
 
 
 class Profile extends React.Component {
@@ -12,21 +32,29 @@ class Profile extends React.Component {
         <h2>Name #2</h2>
         <h3>Compatibility</h3>
         <Accordion defaultActiveKey="0">
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>Favorite restaurant #1</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Favorite restaurant #2</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            </Accordion.Body>
-          </Accordion.Item>
+          <Card>
+            <Card.Header>businessName
+              <ContextAwareToggle eventKey='0'>Click here</ContextAwareToggle>
+            </Card.Header>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              RestaurantInfo
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+            <Accordion.Collapse eventKey='0'></Accordion.Collapse>
+          </Card>
+          <Card>
+            <Card.Header>businessName#2
+              <ContextAwareToggle eventKey='1'>Click here</ContextAwareToggle>
+            </Card.Header>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              RestaurantInfo#2
+              <Button variant="primary">Go somewhere#2</Button>
+            </Card.Body>
+            <Accordion.Collapse eventKey='1'></Accordion.Collapse>
+          </Card>
+          {/* {this.props.userData && ()} */}
         </Accordion>
       </>
     );

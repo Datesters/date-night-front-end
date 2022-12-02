@@ -7,7 +7,7 @@ import teamData from '../data/teamMembers.json';
 class About extends React.Component {
   render() {
     let teamMembers = teamData.map((member) => (
-      <TeamMemberCard name={member.name} description={member.description} />
+      <TeamMemberCard className='team' name={member.name} description={member.description} url={member.imageurl} />
     ));
     return (
       <>

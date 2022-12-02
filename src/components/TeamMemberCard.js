@@ -7,9 +7,9 @@ class TeamMemberCard extends React.Component {
   render() {
     return (
       <>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.url} />
+        <Card>
           <Card.Body>
+            <Card.Img variant="top" src={this.props.url} />
             <Card.Title>{this.props.name}</Card.Title>
             <Card.Text>{this.props.description}</Card.Text>
           </Card.Body>

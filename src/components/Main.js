@@ -6,7 +6,7 @@ class Main extends React.Component {
     return (
       <>
         <h1>Welcome</h1>
-        <Image src="https://via.placeholder.com/400x200" />
+        <Image id='landing-img' src="https://via.placeholder.com/400x200" />
         <section id='about-app'>
           <h3>About our App</h3>
           <p>

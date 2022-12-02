@@ -1,11 +1,23 @@
 #header {
   display: flex;
   justify-content: space-between;
-  font-family:'Times New Roman', Times, serif;
-  font-size: 1.5rem;
+
 }
 
 #header button {
   height: 20px;
   width: 80px;
+}
+
+h1 {
+  font-family:'Times New Roman', Times, serif;
+  font-size: 3rem;
+  padding-top: 1.5rem;
+  color: #A63754;
+}
+
+#icon {
+  width: 85px;
+  height: 75px;
+  padding-top: 15px;
 }

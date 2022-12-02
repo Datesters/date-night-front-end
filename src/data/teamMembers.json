@@ -1,28 +1,27 @@
 [
   {
-    "name": "Aubrey",
-    "description": "Is Aubrey",
+    "name": "Aubrey Corsetti",
+    "description": "Hello, my name is Aubrey Corsetti and I am a Software Developer. Before changing my career towards tech, I was a dog groomer and a solar panel salesperson. Two very different things.. fortunately from that I've learned many skills that may not be tech but I can bring into my tech career such as; time management, the ability to multitask and swift problem solving skills. I decided to go into software development because I've always been intrigued with how websites/apps are built and presented to the user as well as coming up with ways on how I would improve them. This is why I’ve chosen to specialize in Python. I would love to use my skill in a fun environment that is open-minded, allows me to be creative and aims to leave a positive, memorable experience for the user. I am sure that no matter where I go in life, tech will always be a passion of mine and I am always excited to create something that will be used by many.",
     "imageurl": "./Profile-image/aubrey.png"
-    
   },
   {
-    "name": "Ricardo",
-    "description": "Is Ricardo",
+    "name": "Ricardo Soto",
+    "description": "Hello, I’m Ricardo Soto-Fabela and I’m a software developer. I just recently finished serving 10 years in the united states navy with a background in firefighting. In that time, I learned and accomplished many thing in my career like being awarded the military firefighter of the year and having the pleasure of successfully training my whole department to be proficient in aircraft firefighting. However, I felt as if there was more for me to accomplish. One where I can challenge myself and have the ability to be financially free with a successful future. Thats when I discovered coding. I started learning to code on my own and I just enjoyed every minute of it. I could picture myself working for google or a start up company writing code to help better the lives of millions of people around the world. With my given experience of problem solving and leadership from my pervious career field. I feel as if I can help contribute right away in the tech industry.",
     "imageurl": "./Profile-image/Ricardo.png"
   },
   {
-    "name": "Harper",
-    "description": "Is Harper",
+    "name": "Harper Foley",
+    "description": "Harper currently lives with his wife, two boys(3 & 1y/o), and their 90lb labrodoodle. Originally from Uvalda, TX he grew up doing all the quintessential Texan activities like hunting, fishing, shooting competitively, and competing in the rodeo, as well as some 'Less Texan' activities such as playing tennis. After graduating high school, Harper attended the United States Naval Academy in Annapolis, MD and commissioned as a Special Operations Bombs Disposal Officer. In 2021, he transitioned from active duty into the private sector where he worked in Tech M&A advisory for Houlihan Lokey. He recently left his role as an investment banker to pursue software development and currently runs Rainier Racing Co., a Play-To-Earn Gaming NFT market analysis company." ,
     "imageurl": "./Profile-image/Harper.png"
   },
   {
-    "name": "Angelos",
-    "description": "Is Angelos",
+    "name": "Angelos Kounavis",
+    "description": "Hello my name is Angelos Kounavis I am a Software Developer with a background in sales. My story is pretty funny actually. After selling cars to a bunch of software engineers I took an interest in that field and in my spare time I was experimenting a little bit with Javascript and Python in Code Academy. That’s what gave me the confidence to join Code Fellows and start a new career in tech.",
     "imageurl": "./Profile-image/Angelos.png"
   },
   {
-    "name": "Martin",
-    "description": "Is Martin",
+    "name": "Martin Hansen",
+    "description": "Hello, my name is Martin Hansen. I am interested in a role as a full-stack developer; throughout my childhood, I have been praised for my knack for technology and my ability to understand and solve problems. As I grew up, I was humbled by others who were much more knowledgeable about computer science than me. I looked up to these individuals and was inspired to expand my knowledge of computers. I've been learning and developing my understanding ever since. I am currently working in JavaScript, developing full-stack applications in REACT. ",
     "imageurl": "./Profile-image/Martin.png"
   }
 ]

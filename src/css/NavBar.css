@@ -17,6 +17,9 @@
 }
 
 .nav-item:hover {
-  opacity: .4;
   text-decoration: underline;
+}
+
+.nav-link:hover{
+  color: #26070C;
 }

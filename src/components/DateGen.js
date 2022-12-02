@@ -17,7 +17,7 @@ class DateGen extends React.Component {
     };
   }
 
-  handleCitySubmit = async (e) => {
+  handleCitySubmit = async (event) => {
     event.preventDefault();
     let dateSpots = await axios.get(`${serverUrl}/location?location=${this.state.loc}`);
     console.log(dateSpots);

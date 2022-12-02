@@ -1,5 +1,5 @@
 body {
-  background-color: #400716;
+  background-color: white;
   color: #9CA6A2;
 }
 
@@ -39,14 +39,75 @@ h1 {
   text-align: center;
 }
 
-#landing-img {
+.carousel-item img {
+  height: 550px;
+  width: 550px;
+  object-fit: fill;
+  border-radius: 50%;
+  padding: 2rem;
+  margin: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
+.carousel-caption {
+  border: 5px solid black;
+  width: flex;
+  background-color: rgba(128, 128, 128, 0.756);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.accordion-button {
+  color:#73142D;
+  background-color: #a6375562;
+}
+
+.accordion-button:not(.collapsed) {
+  color:#73142D;
+  background-color: #a63755af;
+  text-decoration: underline;
+}
+
+
 .App-link {
-  color: #61dafb;
+  color: #73142D;
+}
+
+
+.team {
+  width: 200rem;
+}
+
+.card {
+  display: inline-block;
+  max-width: 32%;
+  max-height: 350px;
+  margin: auto;
+  padding: auto;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.021);
+  text-align: center;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.card Img {
+  height: 250px;
+  width: 250px;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: 8px 8px 8px 8px rgba(134, 14, 14, 0.687);
+}
+
+h2 {
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  ;
 }
 
 @keyframes App-logo-spin {
@@ -57,43 +118,3 @@ h1 {
     transform: rotate(360deg);
   }
 }
-
-.team {
-  width: 200rem;
-}
-
-.card {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  max-width: 32%;
-  max-height: 600px;
-  margin: auto;
-  padding: auto;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.021);
-  text-align: center;
-
-}
-
-.card Img {
-  height: 200px;
-  width: 250px;
-  align-items: center;
-  padding: 2.35rem;
-}
-
-.card:hover {
-  box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.687);
-}
-
-h2 {
-  text-align: center;
-  font-family:'Times New Roman', Times, serif;
-  ;
-}
-
-/* Img {
-width: 100%;
-height: 100%;
-} */

@@ -63,8 +63,9 @@ class App extends React.Component {
       this.setState({
         user: userResults.data[0]
       });
-
+      return userResults.data[0];
     }
+    return {};
   };
 
   // componentDidMount() {

@@ -11,7 +11,12 @@ class Profile extends React.Component {
 
   componentDidMount() {
     console.log('mounting ');
-    this.props.getUser();
+    const onMount = async () => {
+      const user = await this.props.getUser();
+      console.log(user);
+    };
+    onMount();
+
     console.log('mounted ');
   }
 
@@ -20,6 +25,7 @@ class Profile extends React.Component {
 
     return (
       <>
+
         <h1>{this.props.user.fname}</h1>
         <h1>{this.props.user.sname}</h1>
         <h2>{this.props.user.location}</h2>

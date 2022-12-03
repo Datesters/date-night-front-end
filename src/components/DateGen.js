@@ -36,13 +36,8 @@ class DateGen extends React.Component {
     }
   };
 
-  // componentDidMount () {
-  //   console.log('mounted');
-  //   this.props.getUser();
-  // }
-
   render() {
-    console.log(this.props.user);
+    // console.log(this.props.user);
     return (
       <>
         {this.props.user ?

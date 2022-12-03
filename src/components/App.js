@@ -28,7 +28,7 @@ class App extends React.Component {
         method: 'put',
         baseURL: process.env.REACT_APP_SERVER_URL,
         url: '/user',
-        params: {fname: fname, sname: sname, location: location},
+        params: { fname: fname, sname: sname, location: location },
         headers: {
           'Authorization': `Bearer ${jwt}`
         }
@@ -42,9 +42,14 @@ class App extends React.Component {
   };
 
   getUser = async () => {
+    console.log('getting user');
+    console.log(this.props.auth0);
+
     if (this.props.auth0.isAuthenticated) {
       const res = await this.props.auth0.getIdTokenClaims();
       const jwt = res.__raw;
+
+      console.log('user is auth');
 
       let config = {
         method: 'get',
@@ -55,7 +60,6 @@ class App extends React.Component {
         }
       };
       let userResults = await axios(config);
-      console.log(config);
       this.setState({
         user: userResults.data[0]
       });
@@ -63,8 +67,11 @@ class App extends React.Component {
     }
   };
 
+  // componentDidMount() {
+  //   this.getUser();
+  // }
+
   render() {
-    console.log(this.state.user);
     return (
       <>
         <Container>

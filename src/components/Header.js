@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import NavBar from './NavBar.js';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 import '../css/Header.css';
+import { withAuth0 } from '@auth0/auth0-react';
 
 
 class Header extends React.Component {
@@ -9,10 +12,10 @@ class Header extends React.Component {
     return (
       <>
         <div id='header'>
-          <Image src="https://via.placeholder.com/150x75" />
+          <Image src='https://via.placeholder.com/150x75' />
           <h1>Datesters</h1>
           {/*TODO: add conditional logic for login vs. logout button display */}
-          <Button variant="primary">Log In</Button>
+          {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </div>
         <NavBar />
       </>
@@ -20,4 +23,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withAuth0(Header);

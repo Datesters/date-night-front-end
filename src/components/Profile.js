@@ -6,18 +6,21 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      hasLoaded: false
     };
   }
 
-  componentDidMount() {
-    console.log('mounting ');
+  componentDidUpdate() {
     const onMount = async () => {
       const user = await this.props.getUser();
+      this.setState({
+        hasLoaded: true
+      });
       console.log(user);
     };
-    onMount();
-
-    console.log('mounted ');
+    if (!this.state.hasLoaded) {
+      onMount();
+    }
   }
 
   render() {
@@ -25,7 +28,6 @@ class Profile extends React.Component {
 
     return (
       <>
-
         <h1>{this.props.user.fname}</h1>
         <h1>{this.props.user.sname}</h1>
         <h2>{this.props.user.location}</h2>

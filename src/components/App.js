@@ -42,14 +42,9 @@ class App extends React.Component {
   };
 
   getUser = async () => {
-    console.log('getting user');
-    console.log(this.props.auth0);
-
     if (this.props.auth0.isAuthenticated) {
       const res = await this.props.auth0.getIdTokenClaims();
       const jwt = res.__raw;
-
-      console.log('user is auth');
 
       let config = {
         method: 'get',
@@ -63,14 +58,14 @@ class App extends React.Component {
       this.setState({
         user: userResults.data[0]
       });
-      return userResults.data[0];
+      return true;
     }
-    return {};
+    return false;
   };
 
-  // componentDidMount() {
-  //   this.getUser();
-  // }
+  componentDidMount() {
+    this.getUser();
+  }
 
   render() {
     return (

@@ -24,14 +24,17 @@ class Profile extends React.Component {
   }
 
   render() {
-    console.log(this.props.user);
-
     return (
       <>
-        <h1>{this.props.user.fname}</h1>
-        <h1>{this.props.user.sname}</h1>
-        <h2>{this.props.user.location}</h2>
-        <h2>{this.props.user.compPercent}</h2>
+        {this.props.user ?
+          <>
+            <h1>{this.props.user.fname}</h1>
+            <h1>{this.props.user.sname}</h1>
+            <h2>{this.props.user.location}</h2>
+            <h2>{this.props.user.compPercent}</h2>
+          </>
+          :
+          <h3>Loading</h3>}
       </>
     );
   }

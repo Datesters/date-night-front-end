@@ -14,10 +14,12 @@ class DateGen extends React.Component {
       isError: false
     };
   }
+  
   handleSubmit = async (e) => {
     e.preventDefault();
     // this.props.putUser(this.state.fname, this.state.sname, this.state.location);
     this.props.getUser();
+
   };
 
   handleInputChange = (event) => {

@@ -12,7 +12,7 @@ class Header extends React.Component {
     return (
       <>
         <div id='header'>
-          <Image src='https://via.placeholder.com/150x75' />
+          <Image id="icon" src="/Profile-image/datestersIcon.png"/>
           <h1>Datesters</h1>
           {/*TODO: add conditional logic for login vs. logout button display */}
           {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}

@@ -6,57 +6,66 @@ import Main from './Main.js';
 import DateGen from './DateGen';
 import About from './About';
 import Profile from './Profile';
+import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import axios from 'axios';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userData: {},
-      yelpInfo: []
+      user: {},
     };
   }
 
-  //sends this function down to child to save data from child to state
-  getData = (userData) => {
-    this.setState({
-      userData: userData,
-    });
-  };
-  getLocationCity = async () => {
-    const cityUrl = `https://googleapi?key=${process.env.GOOGLE_API_SERVER}&q${this.state.searchQuery}`;
-    axios.get(cityUrl).then((response) => {
-      let cityData = response.data[0];
-      this.setState({
-        cityObject: response.data[0],
-        name: cityData.name
-      });
-      this.getYelpInfo();
-    });
-  };
-  handleOnChange = (userInput) => {
-    this.setState({
-      searchQuery: userInput
-    });
-    console.log(this.state.searchQuery);
-  };
+  putUser = async (fname, sname, location) => {
+    if (this.props.auth0.isAuthenticated) {
+      const res = await this.props.auth0.getIdTokenClaims();
+      const jwt = res.__raw;
 
-  getYelpInfo = async() => {
-    try {
-      const yelpData = await axios.get(`${process.env.REACT_APP_SERVER}/yelp&q${this.state.searchQuery}`);
+      let config = {
+        method: 'put',
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        url: '/user',
+        params: { fname: fname, sname: sname, location: location },
+        headers: {
+          'Authorization': `Bearer ${jwt}`
+        }
+      };
+      let userResults = await axios(config);
       this.setState({
-        yelpData: yelpData.data
+        user: userResults.data
       });
-    } catch (error) {
-      this.setState({
-        displayRestaurant: false,
-        errorMessage: error.response && error.response.status + ': ' + error.response.data.error
-      });
+
     }
-
   };
+
+  getUser = async () => {
+    if (this.props.auth0.isAuthenticated) {
+      const res = await this.props.auth0.getIdTokenClaims();
+      const jwt = res.__raw;
+
+      let config = {
+        method: 'get',
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        url: '/user',
+        headers: {
+          'Authorization': `Bearer ${jwt}`
+        }
+      };
+      let userResults = await axios(config);
+      this.setState({
+        user: userResults.data[0]
+      });
+      return true;
+    }
+    return false;
+  };
+
+  componentDidMount() {
+    this.getUser();
+  }
 
   render() {
     return (
@@ -65,14 +74,16 @@ class App extends React.Component {
           <Router>
             <Header />
             <Routes>
-              <Route exact path="/" element={<Main />}></Route>
-              <Route exact path="/date" element={<DateGen
-                userData={this.state.userData}
-                getData={this.getData}
+              <Route exact path='/' element={<Main />}></Route>
+              <Route exact path='/date' element={<DateGen
+                user={this.state.user}
+                getUser={this.getUser}
+                putUser={this.putUser}
               />}></Route>
-              <Route exact path="/about" element={<About />}></Route>
-              <Route exact path="/profile" element={<Profile
-                userData={this.state.userData} getYelpInfo={this.state.getYelpInfo} getLocationCity={this.state.getLocationCity}
+              <Route exact path='/about' element={<About />}></Route>
+              <Route exact path='/profile' element={<Profile
+                user={this.state.user}
+                getUser={this.getUser}
               />}></Route>
             </Routes>
           </Router>
@@ -82,4 +93,4 @@ class App extends React.Component {
     );
   }
 }
-export default App;
+export default withAuth0(App);

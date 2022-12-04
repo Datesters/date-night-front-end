@@ -1,64 +1,40 @@
 import React from 'react';
-import { Accordion, Card, Button} from 'react-bootstrap';
-import {useAccordionButton} from 'react-bootstrap/AccordionButton';
+import { withAuth0 } from '@auth0/auth0-react';
 // import '../css/Profile.css';
 
-function ContextAwareToggle({
-  children, eventKey, callback
-}) {
-  const { activeEventKey } = useContext(AccordionContext);
-  const decoratedOnClick = useAccordionButton(
-    eventKey,
-    () => callback && callback(eventKey),
-  );
-  const isCurrentEventKey = activeEventKey === eventKey;
-  return (
-    <button
-      type='button'
-      style={{ backgroundcolor: isCurrentEventKey ? 'pink' : 'lavender' }}
-      onClick={decoratedOnClick}>
-      {children}
-    </button>
-  );
-}
-
-
 class Profile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasLoaded: false
+    };
+  }
+
+  componentDidUpdate() {
+    const onMount = async () => {
+      const user = await this.props.getUser();
+      this.setState({
+        hasLoaded: true
+      });
+      console.log(user);
+    };
+    if (!this.state.hasLoaded) {
+      onMount();
+    }
+  }
+
   render() {
+    console.log(this.props.user);
+
     return (
       <>
-        <h1>Profile Info</h1>
-        <h2>Name #1</h2>
-        <h2>Name #2</h2>
-        <h3>Compatibility</h3>
-        <Accordion defaultActiveKey="0">
-          <Card>
-            <Card.Header>businessName
-              <ContextAwareToggle eventKey='0'>Click here</ContextAwareToggle>
-            </Card.Header>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              RestaurantInfo
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-            <Accordion.Collapse eventKey='0'></Accordion.Collapse>
-          </Card>
-          <Card>
-            <Card.Header>businessName#2
-              <ContextAwareToggle eventKey='1'>Click here</ContextAwareToggle>
-            </Card.Header>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              RestaurantInfo#2
-              <Button variant="primary">Go somewhere#2</Button>
-            </Card.Body>
-            <Accordion.Collapse eventKey='1'></Accordion.Collapse>
-          </Card>
-          {/* {this.props.userData && ()} */}
-        </Accordion>
+        <h1>{this.props.user.fname}</h1>
+        <h1>{this.props.user.sname}</h1>
+        <h2>{this.props.user.location}</h2>
+        <h2>{this.props.user.compPercent}</h2>
       </>
     );
   }
 }
 
-export default Profile;
+export default withAuth0(Profile);

@@ -1,7 +1,12 @@
 import React from 'react';
+import { withAuth0 } from '@auth0/auth0-react';
 import Carousel from 'react-bootstrap/Carousel';
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <>
@@ -45,4 +50,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default withAuth0(Main);

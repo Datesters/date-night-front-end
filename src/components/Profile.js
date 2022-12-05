@@ -12,18 +12,18 @@ class Profile extends React.Component {
     };
   }
 
-  componentDidUpdate() {
-    const onMount = async () => {
-      const user = await this.props.getUser();
-      this.setState({
-        hasLoaded: true
-      });
-      console.log(user);
-    };
-    if (!this.state.hasLoaded) {
-      onMount();
-    }
-  }
+  // componentDidUpdate() {
+  //   const onMount = async () => {
+  //     const user = await this.props.getUser();
+  //     this.setState({
+  //       hasLoaded: true
+  //     });
+  //     console.log(user);
+  //   };
+  //   if (!this.state.hasLoaded) {
+  //     onMount();
+  //   }
+  // }
 
   render() {
     return (

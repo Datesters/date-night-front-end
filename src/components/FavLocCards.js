@@ -22,7 +22,7 @@ class FavLocCards extends Component {
             <div className="yelp-info">
               <h3>{data.name}</h3>
               <p>⭐️ {data.rating}</p>
-              <p>📍 {data.address}</p>
+              <p>📍 {data.address.join(' ')}</p>
               <p>📞 {data.phoneNumber}</p>
               {data.description}
             </div>

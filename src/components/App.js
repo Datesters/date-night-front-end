@@ -86,7 +86,6 @@ class App extends React.Component {
   };
 
   removeItem = async (item) => {
-    console.log('remove Item', item);
     if (this.props.auth0.isAuthenticated) {
       const res = await this.props.auth0.getIdTokenClaims();
       const jwt = res.__raw;
@@ -100,9 +99,10 @@ class App extends React.Component {
           'Authorization': `Bearer ${jwt}`
         }
       };
-      console.log('axios call with', config);
-      await axios(config);
-      return true;
+      let updatedUser = await axios(config);
+      this.setState({
+        user: updatedUser.data[0]
+      });
     }
     return false;
   };

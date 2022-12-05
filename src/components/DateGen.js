@@ -65,49 +65,40 @@ class DateGen extends React.Component {
     }
   };
 
-  // componentDidUpdate() {
-  //   const onMount = async () => {
-  //     const user = await this.props.getUser();
-  //     this.setState({
-  //       hasLoaded: true
-  //     });
-  //     console.log(user);
-  //   };
-  //   if (!this.state.hasLoaded) {
-  //     onMount();
-  //   }
-  // }
-
   render() {
-    // console.log(this.props.user);
     return (
       <>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Label>
-            Location <Form.Control name='loc' type='text' placeholder='ex: Seattle'onChange={this.handleInputChange} />
-            Your Name <Form.Control name='nameOne' type='text' placeholder='ex: John' onChange={this.handleInputChange} />
-            Partners Name <Form.Control name='nameTwo' type='text' placeholder='ex: Susan' onChange={this.handleInputChange} />
-          </Form.Label>
-          <Button className="form-btn" type='submit'>Get Date</Button>
-        </Form>
-        <h3>Results</h3>
-
-        {this.props.user &&
+        {this.props.auth0.isAuthenticated ?
           <>
-            <h4>{this.props.user.fname} and {this.props.user.sname}</h4>
-            <p>{this.props.user.compPercent}% Compatible</p>
-            {this.state.restaurants.length ?
-              <Accordion defaultActiveKey="0">
-                {
-                  this.state.restaurants.map((item, idx) =>
-                    <DateLocCards idx={idx} key={idx} locData={item} putNewItemOnArray={this.props.putNewItemOnArray} />
-                  )
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Label>
+                Location <Form.Control name='loc' type='text' placeholder='ex: Seattle' onChange={this.handleInputChange} />
+                Your Name <Form.Control name='nameOne' type='text' placeholder='ex: John' onChange={this.handleInputChange} />
+                Partners Name <Form.Control name='nameTwo' type='text' placeholder='ex: Susan' onChange={this.handleInputChange} />
+              </Form.Label>
+              <Button className="form-btn" type='submit'>Get Date</Button>
+            </Form>
+            <h3>Results</h3>
+
+            {this.props.user &&
+              <>
+                <h4>{this.props.user.fname} and {this.props.user.sname}</h4>
+                <p>{this.props.user.compPercent}% Compatible</p>
+                {this.state.restaurants.length ?
+                  <Accordion defaultActiveKey="0">
+                    {
+                      this.state.restaurants.map((item, idx) =>
+                        <DateLocCards idx={idx} key={idx} locData={item} putNewItemOnArray={this.props.putNewItemOnArray} />
+                      )
+                    }
+                  </Accordion>
+                  :
+                  <h3>No restaurants</h3>
                 }
-              </Accordion>
-              :
-              <h3>No restaurants</h3>
+              </>
             }
           </>
+          : <h1>Please Login</h1>
         }
       </>
     );

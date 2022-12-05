@@ -86,19 +86,21 @@ class App extends React.Component {
   };
 
   removeItem = async (item) => {
+    console.log('remove Item', item);
     if (this.props.auth0.isAuthenticated) {
       const res = await this.props.auth0.getIdTokenClaims();
       const jwt = res.__raw;
 
       let config = {
-        method: 'put',
+        method: 'delete',
         baseURL: process.env.REACT_APP_SERVER_URL,
         url: '/location',
-        params: { favoriteRestaurant: item },
+        params: { id: item.id },
         headers: {
           'Authorization': `Bearer ${jwt}`
         }
       };
+      console.log('axios call with', config);
       await axios(config);
       return true;
     }
@@ -136,7 +138,7 @@ class App extends React.Component {
               <Route exact path='/profile' element={<Profile
                 user={this.state.user}
                 getUser={this.getUser}
-                deleteArrItem={this.removeItem}
+                removeItem={this.removeItem}
               />}></Route>
             </Routes>
           </Router>

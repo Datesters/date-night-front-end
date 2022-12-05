@@ -22,7 +22,7 @@ class FavLocCards extends Component {
             {data.rating}
           </Accordion.Body>
           <Accordion.Body>
-            <Button onClick={() => this.props.removeItem(data)}>Favorite</Button>
+            <Button onClick={() => this.props.removeItem(data)}>Remove</Button>
           </Accordion.Body>
         </Accordion.Item>
       </>

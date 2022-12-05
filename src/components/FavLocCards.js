@@ -2,7 +2,7 @@ import { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 
-class DateLocCards extends Component {
+class FavLocCards extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,4 +30,4 @@ class DateLocCards extends Component {
   }
 }
 
-export default DateLocCards;
+export default FavLocCards;

@@ -66,7 +66,26 @@ class App extends React.Component {
   };
 
   putNewItemOnArray = async (item) => {
-    console.log(item);
+    if (this.props.auth0.isAuthenticated) {
+      const res = await this.props.auth0.getIdTokenClaims();
+      const jwt = res.__raw;
+
+      let config = {
+        method: 'put',
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        url: '/location',
+        params: { favoriteRestaurant: item },
+        headers: {
+          'Authorization': `Bearer ${jwt}`
+        }
+      };
+      await axios(config);
+      return true;
+    }
+    return false;
+  };
+
+  removeItem = async (item) => {
     if (this.props.auth0.isAuthenticated) {
       const res = await this.props.auth0.getIdTokenClaims();
       const jwt = res.__raw;
@@ -117,6 +136,7 @@ class App extends React.Component {
               <Route exact path='/profile' element={<Profile
                 user={this.state.user}
                 getUser={this.getUser}
+                deleteArrItem={this.removeItem}
               />}></Route>
             </Routes>
           </Router>

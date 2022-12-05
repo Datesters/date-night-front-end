@@ -92,7 +92,7 @@ class DateGen extends React.Component {
         </Form>
         <h3>Results</h3>
 
-        {this.props.user ?
+        {this.props.user &&
           <>
             <h4>{this.props.user.fname} and {this.props.user.sname}</h4>
             <p>{this.props.user.compPercent}% Compatible</p>
@@ -100,7 +100,7 @@ class DateGen extends React.Component {
               <Accordion defaultActiveKey="0">
                 {
                   this.state.restaurants.map((item, idx) =>
-                    <DateLocCards idx={idx} key={idx} locData={item} putNewItemOnArray={this.props.putNewItemOnArray}/>
+                    <DateLocCards idx={idx} key={idx} locData={item} putNewItemOnArray={this.props.putNewItemOnArray} />
                   )
                 }
               </Accordion>
@@ -108,8 +108,7 @@ class DateGen extends React.Component {
               <h3>No restaurants</h3>
             }
           </>
-          :
-          <h4>loading</h4>}
+        }
       </>
     );
   }

@@ -1,6 +1,9 @@
 body {
   background-color: white;
   color: #9CA6A2;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
@@ -68,6 +71,16 @@ h1 {
   color:#73142D;
   background-color: #a63755af;
   text-decoration: underline;
+}
+
+
+.yelp-image {
+  display: flex;
+  width: 400px;
+  align-items: center;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 15%;
 }
 
 

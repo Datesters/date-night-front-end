@@ -18,10 +18,11 @@ class DateLocCards extends Component {
         <Accordion.Item eventKey={idx}>
           <Accordion.Header>{data.name}</Accordion.Header>
           <Accordion.Body>
-            <Image src={data.image}></Image>
-            {data.rating}
-            {data.address}
-            {data.phoneNumber}
+            <Image className="yelp-image" src={data.image}></Image>
+            <h2>{data.name}</h2>
+            <p>⭐️: {data.rating}</p>
+            <p>📍: {data.address}</p>
+            <p>📞: {data.phoneNumber}</p>
             {data.description}
           </Accordion.Body>
           <Accordion.Body>

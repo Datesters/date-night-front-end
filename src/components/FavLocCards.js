@@ -1,8 +1,7 @@
 import { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import Accordion from 'react-bootstrap/Accordion';
+import {Button, Accordion, Image} from 'react-bootstrap';
 
-class DateLocCards extends Component {
+class FavLocCards extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,10 +18,18 @@ class DateLocCards extends Component {
         <Accordion.Item eventKey={idx}>
           <Accordion.Header>{data.name}</Accordion.Header>
           <Accordion.Body>
-            {data.rating}
+            <div className="image-container">
+              <Image src={data.image}></Image>
+            </div>
+            <div className="yelp-info-container">
+              {data.rating}
+              {data.address}
+              {data.phoneNumber}
+              {data.description}
+            </div>
           </Accordion.Body>
           <Accordion.Body>
-            <Button onClick={() => this.props.removeItem(data)}>Favorite</Button>
+            <Button onClick={() => this.props.removeItem(data)}>Remove</Button>
           </Accordion.Body>
         </Accordion.Item>
       </>
@@ -30,4 +37,4 @@ class DateLocCards extends Component {
   }
 }
 
-export default DateLocCards;
+export default FavLocCards;

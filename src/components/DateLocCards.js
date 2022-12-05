@@ -1,6 +1,5 @@
 import { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import Accordion from 'react-bootstrap/Accordion';
+import {Button, Accordion, Image} from 'react-bootstrap';
 
 class DateLocCards extends Component {
   constructor(props) {
@@ -19,7 +18,11 @@ class DateLocCards extends Component {
         <Accordion.Item eventKey={idx}>
           <Accordion.Header>{data.name}</Accordion.Header>
           <Accordion.Body>
+            <Image src={data.image}></Image>
             {data.rating}
+            {data.address}
+            {data.phoneNumber}
+            {data.description}
           </Accordion.Body>
           <Accordion.Body>
             <Button onClick={() => this.props.putNewItemOnArray(data)}>Favorite</Button>

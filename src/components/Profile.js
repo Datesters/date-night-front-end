@@ -28,7 +28,7 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-        {this.props.user.length ?
+        {this.props.user.favoriteRestaurant &&
           <>
             <h1>{this.props.user.fname}</h1>
             <h1>{this.props.user.sname}</h1>
@@ -42,8 +42,7 @@ class Profile extends React.Component {
               }
             </Accordion>
           </>
-          :
-          <h3>Loading</h3>}
+        }
       </>
     );
   }

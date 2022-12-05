@@ -84,11 +84,11 @@ class DateGen extends React.Component {
       <>
         <Form onSubmit={this.handleSubmit}>
           <Form.Label>
-            Location <Form.Control name='loc' type='text' onChange={this.handleInputChange} />
-            Your Name <Form.Control name='nameOne' type='text' onChange={this.handleInputChange} />
-            Partners Name <Form.Control name='nameTwo' type='text' onChange={this.handleInputChange} />
+            Location <Form.Control name='loc' type='text' placeholder='ex: Seattle'onChange={this.handleInputChange} />
+            Your Name <Form.Control name='nameOne' type='text' placeholder='ex: John' onChange={this.handleInputChange} />
+            Partners Name <Form.Control name='nameTwo' type='text' placeholder='ex: Susan' onChange={this.handleInputChange} />
           </Form.Label>
-          <Button type='submit'>Get Date</Button>
+          <Button className="form-btn" type='submit'>Get Date</Button>
         </Form>
         <h3>Results</h3>
 

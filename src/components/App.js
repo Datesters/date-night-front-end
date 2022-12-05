@@ -16,6 +16,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       user: {},
+      hasLoaded: false
     };
   }
 
@@ -35,7 +36,7 @@ class App extends React.Component {
       };
       let userResults = await axios(config);
       this.setState({
-        user: userResults.data
+        user: userResults.data[0]
       });
 
     }
@@ -59,12 +60,43 @@ class App extends React.Component {
         user: userResults.data[0]
       });
       return true;
+
     }
     return false;
   };
 
-  componentDidMount() {
-    this.getUser();
+  putNewItemOnArray = async (item) => {
+    console.log(item);
+    if (this.props.auth0.isAuthenticated) {
+      const res = await this.props.auth0.getIdTokenClaims();
+      const jwt = res.__raw;
+
+      let config = {
+        method: 'put',
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        url: '/location',
+        params: { favoriteRestaurant: item },
+        headers: {
+          'Authorization': `Bearer ${jwt}`
+        }
+      };
+      await axios(config);
+      return true;
+    }
+    return false;
+  };
+
+  componentDidUpdate() {
+    const onMount = async () => {
+      const user = await this.getUser();
+      this.setState({
+        hasLoaded: true
+      });
+      console.log(user);
+    };
+    if (!this.state.hasLoaded) {
+      onMount();
+    }
   }
 
   render() {
@@ -79,6 +111,7 @@ class App extends React.Component {
                 user={this.state.user}
                 getUser={this.getUser}
                 putUser={this.putUser}
+                putNewItemOnArray={this.putNewItemOnArray}
               />}></Route>
               <Route exact path='/about' element={<About />}></Route>
               <Route exact path='/profile' element={<Profile

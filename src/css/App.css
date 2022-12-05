@@ -1,3 +1,11 @@
+body {
+  background-color: white;
+  color: #9CA6A2;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
   text-align: center;
 }
@@ -24,8 +32,131 @@
   color: white;
 }
 
+#about-app {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.carousel-item img {
+  height: 550px;
+  width: 550px;
+  object-fit: fill;
+  border-radius: 50%;
+  padding: 2rem;
+  margin: auto;
+  display: block;
+}
+
+.carousel-caption {
+  border: 5px solid black;
+  width: flex;
+  background-color: rgba(128, 128, 128, 0.756);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.accordion-button {
+  color:#73142D;
+  background-color: #a6375562;
+}
+
+.accordion-button:not(.collapsed) {
+  color:#73142D;
+  background-color: #a63755af;
+  text-decoration: underline;
+}
+
+
+.yelp-image {
+  width: 500px;
+  align-items: left;
+  padding: 1.5rem;
+  border-radius: 15%;
+}
+
+.yelp-info {
+  display: inline-block;
+  margin: auto;
+  align-items: right;
+  
+}
+
+.accordion-body {
+  align-items: flex-start;
+}
+
 .App-link {
-  color: #61dafb;
+  color: #73142D;
+}
+
+
+.team {
+  width: 200rem;
+}
+
+.card {
+  display: inline-block;
+  max-width: 32%;
+  max-height: 350px;
+  margin: auto;
+  padding: auto;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.021);
+  text-align: center;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.card Img {
+  height: 250px;
+  width: 250px;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: 8px 8px 8px 8px rgba(134, 14, 14, 0.687);
+}
+
+h2 {
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+}
+
+h3 {
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  background: lightgray;
+}
+
+.form-btn {
+  background: #73142D;
+}
+
+.form-btn:hover {
+  background: pink;
+  color: black;
+}
+
+.fave-btn {
+  background: #73142D;
+}
+
+.fave-btn:hover {
+  background: pink;
+  color: black;
 }
 
 @keyframes App-logo-spin {

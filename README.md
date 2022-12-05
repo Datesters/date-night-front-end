@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Datesters
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Synopsis
 
-## Available Scripts
+*Datesters* is an online date planner application that allows users to determine the suitability of a dating partner based on their names and returns a **Percent Match**. The application will then suggest a series of popular date spots based on the user's location. Users will be able to save their partners and date spots for future reference.
 
-In the project directory, you can run:
+## Tech Used
 
-### `npm start`
+* React
+* CSS3
+* Netlify
+* Render
+* MongoDB
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Motivation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+We created this project to simplify selecting places to go for date night. Whether your are married, on your first date, or in a committed long-term relationship, picking fun or romantic places to go out and kindle deeper connections is stressful and time-intensive. *Datesters* allows you to quickly get a list of popular date spots based on your location and allows you to save them for future reference.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* TODO
 
-### `npm run build`
+## API Reference
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [Love Calculator](https://rapidapi.com/ajith/api/love-calculator)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* TODO
 
-### `npm run eject`
+## Contributors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Aubrey Corsetti
+* Martin Hansen
+* Ricardo Soto
+* Angelos Kounavis
+* Harper Foley
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* MIT
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Board
 
-## Learn More
+* [TRELLO](https://trello.com/b/HLxwK3sU/datesters)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Schema
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Schema](readIMG/Schema301.png)
 
-### Code Splitting
+## UML
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![UML](readIMG/UML301.png)
 
-### Analyzing the Bundle Size
+## Wireframe
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Landing
 
-### Making a Progressive Web App
+![landing](readIMG/home301.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Home
 
-### Advanced Configuration
+![home](readIMG/input301.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Profile
 
-### Deployment
+![profile](readIMG/profile301.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+About Us
 
-### `npm run build` fails to minify
+![about](readIMG/about301.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Sources
+
+Photo by SJ on Unsplash
+  
+Photo by Zane Persaud on Unsplash
+
+Photo by Kamil Kalbarczyk on Unsplash
+
+icon by istock photos
+  

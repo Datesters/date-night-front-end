@@ -31,9 +31,10 @@ class Profile extends React.Component {
         {this.props.user.favoriteRestaurant &&
           <>
             <h1>{this.props.user.fname}</h1>
+            <h1>&</h1>
             <h1>{this.props.user.sname}</h1>
-            <h2>{this.props.user.location}</h2>
-            <h2>{this.props.user.compPercent}</h2>
+            <h2>You've chosen {this.props.user.location} as your location.</h2>
+            <h2> You are {this.props.user.compPercent}% compatible! 💕</h2>
             <Accordion defaultActiveKey="0">
               {
                 this.props.user.favoriteRestaurant.map((item, idx) =>

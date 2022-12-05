@@ -22,7 +22,7 @@ class DateLocCards extends Component {
             {data.rating}
           </Accordion.Body>
           <Accordion.Body>
-            <Button onClick={() => this.props.putNewItemOnArray(data)}>Favorite</Button>
+            <Button onClick={() => this.props.removeItem(data)}>Favorite</Button>
           </Accordion.Body>
         </Accordion.Item>
       </>

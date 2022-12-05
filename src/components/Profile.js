@@ -1,6 +1,5 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
-// import '../css/Profile.css';
 
 
 class Profile extends React.Component {

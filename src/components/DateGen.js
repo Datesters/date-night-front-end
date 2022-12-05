@@ -21,7 +21,7 @@ class DateGen extends React.Component {
     event.preventDefault();
     let dateSpots = await axios.get(`${serverUrl}/location?location=${this.state.loc}`);
     console.log(dateSpots);
-  }
+  };
 
   handleLoveSubmit = async (event) => {
     event.preventDefault();

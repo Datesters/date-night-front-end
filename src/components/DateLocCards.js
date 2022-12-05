@@ -28,7 +28,7 @@ class DateLocCards extends Component {
             </div>
           </Accordion.Body>
           <Accordion.Body>
-            <Button onClick={() => this.props.putNewItemOnArray(data)}>Favorite</Button>
+            <Button onClick={() => this.props.putNewItemOnArray(data)}>Add to Favorites</Button>
           </Accordion.Body>
         </Accordion.Item>
       </>

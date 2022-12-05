@@ -137,6 +137,19 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.form-control {
+  background: lightgray;
+}
+
+.form-btn {
+  background: #73142D;
+}
+
+.form-btn:hover {
+  background: pink;
+  color: black;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import {Button, Accordion, Image} from 'react-bootstrap';
+import { Button, Accordion, Image } from 'react-bootstrap';
 
 class FavLocCards extends Component {
   constructor(props) {
@@ -18,13 +18,12 @@ class FavLocCards extends Component {
         <Accordion.Item eventKey={idx}>
           <Accordion.Header>{data.name}</Accordion.Header>
           <Accordion.Body>
-            <div className="image-container">
-              <Image src={data.image}></Image>
-            </div>
-            <div className="yelp-info-container">
-              {data.rating}
-              {data.address}
-              {data.phoneNumber}
+            <Image className="yelp-image" src={data.image}></Image>
+            <div className="yelp-info">
+              <h3>{data.name}</h3>
+              <p>⭐️ {data.rating}</p>
+              <p>📍 {data.address}</p>
+              <p>📞 {data.phoneNumber}</p>
               {data.description}
             </div>
           </Accordion.Body>

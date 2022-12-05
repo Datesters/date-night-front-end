@@ -1,6 +1,9 @@
 body {
   background-color: white;
   color: #9CA6A2;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
@@ -71,6 +74,24 @@ h1 {
 }
 
 
+.yelp-image {
+  width: 500px;
+  align-items: left;
+  padding: 1.5rem;
+  border-radius: 15%;
+}
+
+.yelp-info {
+  display: inline-block;
+  margin: auto;
+  align-items: right;
+  
+}
+
+.accordion-body {
+  align-items: flex-start;
+}
+
 .App-link {
   color: #73142D;
 }
@@ -107,7 +128,13 @@ h1 {
 h2 {
   text-align: center;
   font-family:'Times New Roman', Times, serif;
-  ;
+}
+
+h3 {
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bolder;
+  margin-bottom: 1rem;
 }
 
 @keyframes App-logo-spin {

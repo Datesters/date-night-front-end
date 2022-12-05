@@ -150,6 +150,15 @@ h3 {
   color: black;
 }
 
+.fave-btn {
+  background: #73142D;
+}
+
+.fave-btn:hover {
+  background: pink;
+  color: black;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

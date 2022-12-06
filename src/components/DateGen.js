@@ -46,7 +46,6 @@ class DateGen extends React.Component {
     e.preventDefault();
     await this.props.putUser(this.state.fname, this.state.sname, this.state.location);
     await this.getLoc(this.state.location);
-    console.log(this.state.restaurants);
   };
 
   handleInputChange = (event) => {
@@ -64,6 +63,13 @@ class DateGen extends React.Component {
       });
     }
   };
+
+  componentDidMount() {
+    const onMount = async () => {
+      await this.props.getUser();
+    };
+    onMount();
+  }
 
   render() {
     return (

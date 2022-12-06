@@ -107,17 +107,11 @@ class App extends React.Component {
     return false;
   };
 
-  componentDidUpdate() {
+  componentDidMount() {
     const onMount = async () => {
-      const user = await this.getUser();
-      this.setState({
-        hasLoaded: true
-      });
-      console.log(user);
+      await this.getUser();
     };
-    if (!this.state.hasLoaded) {
-      onMount();
-    }
+    onMount();
   }
 
   render() {

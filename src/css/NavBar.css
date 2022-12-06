@@ -1,5 +1,5 @@
 
-.nav {
+.navbar {
   display: flex;
   margin: 1rem 0;
   justify-content: space-around;
@@ -16,7 +16,7 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.nav-item:hover {
+.nav-item a:hover {
   text-decoration: underline;
 }
 

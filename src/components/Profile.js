@@ -12,6 +12,13 @@ class Profile extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const onMount = async () => {
+      await this.props.getUser();
+    };
+    onMount();
+  }
+
   render() {
     return (
       <>

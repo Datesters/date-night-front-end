@@ -6,7 +6,7 @@ class Footer extends React.Component {
   render() {
     return (
       <>
-        <div className="d-flex flex-column"></div>
+        <body className="d-flex flex-column"></body>
         <footer class="mt-auto">
           {`© 2022 ${String.fromCharCode(183)} Code Fellows`}
         </footer>
